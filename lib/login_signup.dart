@@ -26,239 +26,236 @@ class _LoginSignupState extends State<LoginSignup> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      color: Colors.white70,
-      child: Scaffold(
-        backgroundColor: Colors.white70,
-        body: Material(
-          color: Colors.white70,
-          child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // SizedBox(
-                    //   height: 50,
-                    // ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(8.0),
-                    //   child: Image.network(
-                    //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMc4g58prl3gRyOTIEFqTPxeUWOTJYFL0GXg&usqp=CAU"),
-                    // ),
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: CircleAvatar(
-                        // backgroundImage: NetworkImage(
-                        //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMc4g58prl3gRyOTIEFqTPxeUWOTJYFL0GXg&usqp=CAU"),
-                        backgroundImage: AssetImage("assets/images.png"),
-                        backgroundColor: Colors.white,
-                        radius: 90,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Stack(
+          alignment: AlignmentDirectional.center,
+          children: [
+            Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Text(
+                    "Modi ID",
+                    style: GoogleFonts.montserrat(fontSize: 30),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: CircleAvatar(
+                      // backgroundImage: NetworkImage(
+                      //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMc4g58prl3gRyOTIEFqTPxeUWOTJYFL0GXg&usqp=CAU"),
+                      backgroundImage: AssetImage("assets/images.png"),
+                      backgroundColor: Colors.white,
+                      radius: 90,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  // FlutterSwitch(
+                  //   width: 160.0,
+                  //   height: 55.0,
+                  //   valueFontSize: 25.0,
+                  //   toggleSize: 45.0,
+                  //   value: status,
+                  //   borderRadius: 30.0,
+                  //   padding: 8.0,
+                  //   showOnOff: true,
+                  //   activeText: "Login",
+                  //   inactiveText: "SignUp",
+                  //   activeColor: kColorDarkestBlack,
+                  //   inactiveColor: kColorLightBlack,
+                  //   activeTextColor: Colors.white,
+                  //   inactiveTextColor: Colors.white,
+                  //   activeIcon: Icon(Icons.login),
+                  //   inactiveIcon: Icon(Icons.account_circle),
+                  //   onToggle: (val) {
+                  //     setState(() {
+                  //       status = val;
+                  //     });
+                  //   },
+                  // ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 28),
+                    child: TextFormField(
+                      // validator: (val) {
+                      //   bool emailValid = RegExp(
+                      //           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                      //       .hasMatch(val);
+                      //   if (emailValid) return null;
+                      //   return 'Please Enter a correct email';
+                      // },
+                      controller: phoneTextController,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Enter Aadhaar number',
+                        labelStyle:
+                            GoogleFonts.montserrat(textStyle: TextStyle(color: Colors.black)),
+                        border:
+                            OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
+                        prefixIcon: Icon(
+                          Icons.keyboard,
+                          color: Colors.black,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.all(Radius.circular(50))),
                       ),
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    // FlutterSwitch(
-                    //   width: 160.0,
-                    //   height: 55.0,
-                    //   valueFontSize: 25.0,
-                    //   toggleSize: 45.0,
-                    //   value: status,
-                    //   borderRadius: 30.0,
-                    //   padding: 8.0,
-                    //   showOnOff: true,
-                    //   activeText: "Login",
-                    //   inactiveText: "SignUp",
-                    //   activeColor: kColorDarkestBlack,
-                    //   inactiveColor: kColorLightBlack,
-                    //   activeTextColor: Colors.white,
-                    //   inactiveTextColor: Colors.white,
-                    //   activeIcon: Icon(Icons.login),
-                    //   inactiveIcon: Icon(Icons.account_circle),
-                    //   onToggle: (val) {
-                    //     setState(() {
-                    //       status = val;
-                    //     });
-                    //   },
-                    // ),
+                  ),
+                  if (visible)
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 28),
+                      padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 0),
                       child: TextFormField(
+                        // obscureText: !_passwordVisible,
                         // validator: (val) {
-                        //   bool emailValid = RegExp(
-                        //           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                        //       .hasMatch(val);
-                        //   if (emailValid) return null;
-                        //   return 'Please Enter a correct email';
+                        //   if (val.length < 6) {
+                        //     return 'Please enter a longer password';
+                        //   }
+                        //   return null;
                         // },
-                        controller: phoneTextController,
+                        controller: passwordTextController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          labelText: 'Enter Aadhaar number',
                           labelStyle:
                               GoogleFonts.montserrat(textStyle: TextStyle(color: Colors.black)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                          labelText: 'Enter OTP',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(50))),
                           prefixIcon: Icon(
-                            Icons.keyboard,
+                            Icons.lock,
                             color: Colors.black,
                           ),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
-                              borderRadius: BorderRadius.all(Radius.circular(50))),
+                          // suffixIcon: IconButton(
+                          //   icon: Icon(
+                          //     // Based on passwordVisible state choose the icon
+                          //     _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                          //     color: Colors.black,
+                          //   ),
+                          //   onPressed: () {
+                          //     // Update the state i.e. toggle the state of passwordVisible variable
+                          //     setState(() {
+                          //       _passwordVisible = !_passwordVisible;
+                          //     });
+                          //   },
+                          // ),
                         ),
                       ),
                     ),
-                    if (visible)
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 0),
-                        child: TextFormField(
-                          // obscureText: !_passwordVisible,
-                          // validator: (val) {
-                          //   if (val.length < 6) {
-                          //     return 'Please enter a longer password';
-                          //   }
-                          //   return null;
-                          // },
-                          controller: passwordTextController,
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            labelStyle:
-                                GoogleFonts.montserrat(textStyle: TextStyle(color: Colors.black)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
-                              borderRadius: BorderRadius.all(Radius.circular(50)),
-                            ),
-                            labelText: 'Enter OTP',
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(50))),
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: Colors.black,
-                            ),
-                            // suffixIcon: IconButton(
-                            //   icon: Icon(
-                            //     // Based on passwordVisible state choose the icon
-                            //     _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                            //     color: Colors.black,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Align(
+                      child: Text(""),
+                      alignment: Alignment(0.7, 0),
+                    ),
+                  ),
+                  if (status)
+                    GestureDetector(
+                      // onTap: login,
+                      onTap: () {
+                        if (!visible) {
+                          visible = true;
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("OTP sent"),
+                          )); //TODO: Replace with toast
+                          setState(() {});
+                        } else {
+                          Navigator.pushReplacement(
+                              context, MaterialPageRoute(builder: (context) => Dashboard()));
+                        }
+                      },
+                      child: Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          color: Colors.black,
+                        ),
+                        margin: EdgeInsets.all(24),
+                        padding: EdgeInsets.all(12),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // Padding(
+                            //   padding: const EdgeInsets.all(2.0),
+                            //   child: Icon(
+                            //     Icons.login,
+                            //     color: Colors.white,
+                            //     size: 25,
                             //   ),
-                            //   onPressed: () {
-                            //     // Update the state i.e. toggle the state of passwordVisible variable
-                            //     setState(() {
-                            //       _passwordVisible = !_passwordVisible;
-                            //     });
-                            //   },
                             // ),
-                          ),
+                            Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text(
+                                (!visible) ? "Verify" : "Submit OTP",
+                                style: TextStyle(color: Colors.white, fontSize: 20),
+                              ),
+                            )
+                          ],
                         ),
-                      ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        child: Text(""),
-                        alignment: Alignment(0.7, 0),
                       ),
                     ),
-                    if (status)
-                      GestureDetector(
-                        // onTap: login,
-                        onTap: () {
-                          if (!visible) {
-                            visible = true;
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text("OTP sent"),
-                            )); //TODO: Replace with toast
-                            setState(() {});
-                          } else {
-                            Navigator.pushReplacement(
-                                context, MaterialPageRoute(builder: (context) => Dashboard()));
-                          }
-                        },
-                        child: Container(
-                          width: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                            color: Colors.black,
-                          ),
-                          margin: EdgeInsets.all(24),
-                          padding: EdgeInsets.all(12),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              // Padding(
-                              //   padding: const EdgeInsets.all(2.0),
-                              //   child: Icon(
-                              //     Icons.login,
-                              //     color: Colors.white,
-                              //     size: 25,
-                              //   ),
-                              // ),
-                              Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Text(
-                                  (!visible) ? "Verify" : "Submit OTP",
-                                  style: TextStyle(color: Colors.white, fontSize: 20),
-                                ),
-                              )
-                            ],
-                          ),
+                  if (!status)
+                    GestureDetector(
+                      onTap: signUp,
+                      child: Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          color: Colors.black,
                         ),
-                      ),
-                    if (!status)
-                      GestureDetector(
-                        onTap: signUp,
-                        child: Container(
-                          width: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                            color: Colors.black,
-                          ),
-                          margin: EdgeInsets.all(24),
-                          padding: EdgeInsets.all(12),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Icon(
-                                  Icons.account_circle,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
+                        margin: EdgeInsets.all(24),
+                        padding: EdgeInsets.all(12),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Icon(
+                                Icons.account_circle,
+                                color: Colors.white,
+                                size: 25,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Text(
-                                  "Signup",
-                                  style: TextStyle(color: Colors.white, fontSize: 20),
-                                ),
-                              )
-                            ],
-                          ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text(
+                                "Signup",
+                                style: TextStyle(color: Colors.white, fontSize: 20),
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                  ],
-                ),
+                    ),
+                ],
               ),
-              // if (loading)
-              //   Container(
-              //     height: MediaQuery.of(context).size.height,
-              //     width: MediaQuery.of(context).size.width,
-              //     color: Color(0xA1FFFFFF),
-              //     child: Center(
-              //       child: CircularProgressIndicator(
-              //           valueColor: new AlwaysStoppedAnimation<Color>(Colors.yellow)),
-              //     ),
-              //   )
-            ],
-          ),
+            ),
+            // if (loading)
+            //   Container(
+            //     height: MediaQuery.of(context).size.height,
+            //     width: MediaQuery.of(context).size.width,
+            //     color: Color(0xA1FFFFFF),
+            //     child: Center(
+            //       child: CircularProgressIndicator(
+            //           valueColor: new AlwaysStoppedAnimation<Color>(Colors.yellow)),
+            //     ),
+            //   )
+          ],
         ),
       ),
     );
