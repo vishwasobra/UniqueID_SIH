@@ -5,9 +5,18 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        child: Center(child: Text("Dashboard")),
+    return Scaffold(
+      backgroundColor: Colors.white70,
+      appBar: AppBar(
+        elevation: 0,
+        title: Text(
+          "Unique ID",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white70,
+      ),
+      body: Container(
+        child: Center(child: Text("Dashboard in Progress")),
       ),
     );
   }
