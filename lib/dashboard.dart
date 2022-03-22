@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -38,80 +39,96 @@ class Dashboard extends StatelessWidget {
           //     );
           //   },
           // ),
-          child: CustomScrollView(
-            primary: false,
-            slivers: <Widget>[
-              SliverPadding(
-                padding: const EdgeInsets.all(10),
-                sliver: SliverGrid.count(
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  crossAxisCount: 3,
-                  children: <Widget>[
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                                height: 80, width: 80, child: Image.asset("assets/upload.png")),
-                            Text("Upload"),
-                          ],
+
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              Center(
+                  child: Text(
+                "Your Unique ID is:\nABCUSER1234A12345678",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 20),
+              )),
+              SizedBox(height: 20),
+              CustomScrollView(
+                shrinkWrap: true,
+                primary: false,
+                slivers: <Widget>[
+                  SliverPadding(
+                    padding: const EdgeInsets.all(10),
+                    sliver: SliverGrid.count(
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      crossAxisCount: 3,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                    height: 80, width: 80, child: Image.asset("assets/upload.png")),
+                                Text("Upload"),
+                              ],
+                            ),
+                            color: Colors.grey[300],
+                          ),
                         ),
-                        color: Colors.grey[300],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                                height: 80, width: 80, child: Image.asset("assets/download.png")),
-                            Text("Download"),
-                          ],
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                    height: 80,
+                                    width: 80,
+                                    child: Image.asset("assets/download.png")),
+                                Text("Download"),
+                              ],
+                            ),
+                            color: Colors.grey[300],
+                          ),
                         ),
-                        color: Colors.grey[300],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                                height: 80,
-                                width: 80,
-                                child: Image.asset("assets/job_internship.png")),
-                            Text("Opportunities"),
-                          ],
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                    height: 80,
+                                    width: 80,
+                                    child: Image.asset("assets/job_internship.png")),
+                                Text("Opportunities"),
+                              ],
+                            ),
+                            color: Colors.grey[300],
+                          ),
                         ),
-                        color: Colors.grey[300],
-                      ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          child: const Text('Who scream'),
+                          color: Colors.green[400],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          child: const Text('Revolution is coming...'),
+                          color: Colors.green[500],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          child: const Text('Revolution, they...'),
+                          color: Colors.green[600],
+                        ),
+                      ],
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Who scream'),
-                      color: Colors.green[400],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Revolution is coming...'),
-                      color: Colors.green[500],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Revolution, they...'),
-                      color: Colors.green[600],
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
